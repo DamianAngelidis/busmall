@@ -30,7 +30,7 @@ function showCart() {
   console.log('I am in show cart.');
   // TODO: Find the table body
   // TODO: Iterate over the items in the cart
-  for(var i = 0; i < cart.items.items.length; i++){
+  for(var i = 0; i < cart.items.length; i++){
     var trEl = document.createElement('tr');
     var tdEl = document.createElement('td');
     tdEl.textContent = 'X';
@@ -38,11 +38,11 @@ function showCart() {
     trEl.appendChild(tdEl);
 
     tdEl = document.createElement('td');
-    tdEl.textContent = cart.items.items[i].quantity;
+    tdEl.textContent = cart.items[i].quantity;
     trEl.appendChild(tdEl);
 
     tdEl = document.createElement('td');
-    tdEl.textContent = cart.items.items[i].product;
+    tdEl.textContent = cart.items[i].product;
     trEl.appendChild(tdEl);
     tbody.appendChild(trEl);
   }
@@ -55,22 +55,15 @@ function showCart() {
 function removeItemFromCart(event) {
 
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
-  var name = event.target.rowIndex;
-  console.log(event.target.getAttribute('name'));
-
-  cart.items.items
-
+  var name = event.target.getAttribute('name');
+  name = parseInt(name);
+  cart.removeItem(name);
   // TODO: Save the cart back to local storage
+  cart.saveToLocalStorage();
   // TODO: Re-draw the cart table
+  renderCart();
 
 }
 
 // This will initialize the page and draw the cart on screen
 renderCart();
-for(var i = 0; i < table.length; i++){
-  table.rows[i].cells[2].onclick = function(){
-    console.log(i);
-    var index = this.parentElement.rowIndex;
-    console.log(index);
-  }
-}
