@@ -24,3 +24,27 @@ h1{
 nav{
   display: inline;
 }
+
+table {
+  font-family: 'Raleway', sans-serif;
+  border-collapse: collapse;
+  margin-left: 125px;
+  margin-top: 75px;
+}
+
+table, tr, td {
+  border: 2px solid #F2B90C;
+}
+
+tr:nth-child(even){
+  background-color: #F2CB07
+}
+
+tr:hover {
+  background-color: #2ECEF2
+}
+
+footer {
+  background-color: #2ECEF2;
+  color:#F2CB07;
+}
