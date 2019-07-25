@@ -1,1 +1,50 @@
-/* TODO: Make it awesome */
+@import url('https://fonts.googleapis.com/css?family=Fascinate&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+body {
+  background-color: #03A688;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  line-height: 20px;
+  letter-spacing: 0.3em;
+}
+header{
+  background-color: rgba(46, 206, 242, 0.6);
+  margin-top: 5px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 10px;
+}
+h1{
+ font-family: 'Fascinate', cursive;
+ color: #F2CB07;
+ font-size: 3em;
+ padding: 20px;
+}
+nav{
+  display: inline;
+}
+
+table {
+  font-family: 'Raleway', sans-serif;
+  border-collapse: collapse;
+  margin-left: 125px;
+  margin-top: 75px;
+}
+
+table, tr, td {
+  border: 2px solid #F2B90C;
+}
+
+tr:nth-child(even){
+  background-color: #F2CB07
+}
+
+tr:hover {
+  background-color: #2ECEF2
+}
+
+footer {
+  background-color: #2ECEF2;
+  color:#F2CB07;
+}
