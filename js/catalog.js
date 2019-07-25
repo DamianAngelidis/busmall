@@ -11,8 +11,11 @@ function populateForm() {
 
   //TODO: Add an <option> tag inside the form's select for each product
   var selectElement = document.getElementById('items');
-  for (var i in Product.allProducts) {
 
+  for(var i = 0; i < Product.allProducts.length; i++){
+    var option = document.createElement('option');
+    option.text = Product.allProducts[i].name;
+    selectElement.add(option);
   }
 
 }
@@ -23,9 +26,10 @@ function populateForm() {
 function handleSubmit(event) {
 
   // TODO: Prevent the page from reloading
+  event.preventDefault();
 
   // Do all the things ...
-  addSelectedItemToCart();
+  addSelectedItemToCart(event);
   cart.saveToLocalStorage();
   updateCounter();
   updateCartPreview();
@@ -33,17 +37,36 @@ function handleSubmit(event) {
 }
 
 // TODO: Add the selected item and quantity to the cart
-function addSelectedItemToCart() {
+function addSelectedItemToCart(event) {
   // TODO: suss out the item picked from the select list
+  var item = event.target.items.value;
   // TODO: get the quantity
+  var quantity = event.target.quantity.value;
   // TODO: using those, add one item to the Cart
+  cart.addItem(item, quantity);
 }
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
+function updateCounter() {
+  var counterthing = document.getElementById('itemCount');
+  var total = 0;
+  for(var i = 0; i < cart.items.length; i++){
+    total += parseInt(cart.items[i].quantity);
+  }
+  counterthing.textContent = ` contains ${total} items`;
+}
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
+  var divEl = document.getElementById('cartContents');
+  var liEl = document.createElement('li');
+  divEl.appendChild(liEl);
+
+  var ulEl = document.createElement('ul');
+  ulEl.textContent = `${event.target.items.value} - ${event.target.quantity.value}`;
+  liEl.appendChild(ulEl);
+
+
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
