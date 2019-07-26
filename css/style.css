@@ -21,15 +21,37 @@ h1{
  font-size: 3em;
  padding: 20px;
 }
+.card h1{
+  font-family: 'Fascinate', cursive;
+  color: #F2CB07;
+  font-size: 2em;
+  padding: 20px;
+ }
+
+ span{ 
+ font-weight: bold;
+ }
+
 nav{
   display: inline;
+}
+
+ol {
+  margin: 10%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+legend {
+  padding: 3%;
+  font-size: 1.3em;
 }
 
 table {
   font-family: 'Raleway', sans-serif;
   border-collapse: collapse;
-  margin-left: 125px;
-  margin-top: 75px;
+  margin: auto;
+  width: 50%;
 }
 
 table, tr, td {
@@ -47,4 +69,9 @@ tr:hover {
 footer {
   background-color: #2ECEF2;
   color:#F2CB07;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 10%;
+  margin-bottom: 0%;
+
 }
